@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="8dp"
+    android:orientation="vertical"
+    tools:context="br.com.example.bluetoothapp.MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_habilitar"
+        android:onClick="enableBluetooth"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_conectar"
+        android:onClick="connect"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_br_connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_br_conectar"
+        android:onClick="brConnect"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BluetoothApp</string>
+    <string name="text_conectar">Conectar</string>
+    <string name="text_desconectar">Desconectar</string>
+    <string name="text_habilitar">Habilitar Bluetooth</string>
+    <string name="text_br_habilitar">ON / OFF</string>
+    <string name="text_br_conectar">Com BroadcastReceiver</string>
+    <string name="text_br_habilitar_dispositivos">Habilitar Dispositivos</string>
+    <string name="text_br_dispositivos">Mostrar Dispositivos</string>
+</resources>
