@@ -5,6 +5,10 @@
     <string name="text_habilitar">Habilitar Bluetooth</string>
     <string name="text_br_habilitar">ON / OFF</string>
     <string name="text_br_conectar">Com BroadcastReceiver</string>
-    <string name="text_br_habilitar_dispositivos">Habilitar Dispositivos</string>
+    <string name="text_br_habilitar_dispositivos">Tornar Visível</string>
     <string name="text_br_dispositivos">Mostrar Dispositivos</string>
+    <string name="start_connection">Start Connection</string>
+    <string name="mensagem">Mensagem</string>
+    <string name="enviar">Enviar</string>
+    <string name="status">Status:</string>
 </resources>

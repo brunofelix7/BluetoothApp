@@ -6,6 +6,8 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,6 +32,7 @@ public class BluetoothConnectionService {
     public BluetoothConnectionService(Context context){
         this.context = context;
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        start();
     }
 
     /**
@@ -106,13 +109,13 @@ public class BluetoothConnectionService {
             } catch (IOException e) {
                 try {
                     mmSocket.close();
-                    Log.d(TAG, "run: Closed Socket.");
+                    Log.e(TAG, "run: Closed Socket.");
                 } catch (IOException e1) {
                     Log.e(TAG, "mConnectThread: run: Unable to close connection in socket " + e1.getMessage());
                 }
-                Log.d(TAG, "run: ConnectThread: Could not connect to UUID: " + MY_UUID_INSECURE );
+                Log.e(TAG, "run: ConnectThread: Could not connect to UUID: " + MY_UUID_INSECURE );
             }
-            connected(mmSocket,mmDevice);
+            connected(mmSocket, mmDevice);
         }
         public void cancel() {
             try {
@@ -182,6 +185,11 @@ public class BluetoothConnectionService {
                     bytes = mmInStream.read(buffer);
                     String incomingMessage = new String(buffer, 0, bytes);
                     Log.d(TAG, "InputStream: " + incomingMessage);
+
+                    //  Passando a mensagem para a Activity
+                    Intent intent = new Intent("incomingMessage");
+                    intent.putExtra("message", incomingMessage);
+                    LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
                 } catch (IOException e) {
                     Log.e(TAG, "write: Error reading Input Stream. " + e.getMessage() );
                     break;
